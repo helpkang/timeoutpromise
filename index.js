@@ -10,7 +10,7 @@ NetworkError.prototype = new Error;
 function timeoutPromise(timeout, promise) {
     var wrapPromise = new Promise(function (resolve, reject) {
         setTimeout(function () {
-            reject(new NetworkError('Promise not resolved after ' + timeout + ' ms'));
+            reject(new NetworkError('Promise timeout ' + timeout + ' ms'));
         }, timeout);
     });
 
